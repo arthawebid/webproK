@@ -1,20 +1,28 @@
 <?php
-if(isset($_GET['p'])){
-    if($_GET['p']=="baru"){
-        $titlepage = "Tambah Data Mahasiswa";
-        $pg = "addnew.php"; 
+if(isset($_GET['pg'])){
+  if($_GET['pg']=="mhs"){
+    $titlepage = "List Data Mahasiswa";
+    $pg = "mhs-listdata.php"; 
+    if(isset($_GET['sp'])){
+      if($_GET['sp']=="baru"){
+          $titlepage = "Tambah Data Mahasiswa";
+          $pg = "addnew.php"; 
+      }
+      if($_GET["sp"]=="edit"){
+          $titlepage = "Edit Data Mahasiswa";
+          $pg = "editdata.php"; 
+      }
+      if($_GET["sp"]=="dele"){
+          $titlepage = "Hapus Data Mahasiswa";
+          $pg = "deledata.php"; 
+      }
     }
-    if($_GET["p"]=="edit"){
-        $titlepage = "Edit Data Mahasiswa";
-        $pg = "editdata.php"; 
-    }
-    if($_GET["p"]=="dele"){
-        $titlepage = "Hapus Data Mahasiswa";
-        $pg = "deledata.php"; 
-    }
+  }
+  if($_GET['pg']=="mk"){}
+  if($_GET['pg']=="dsn"){}
 }else{
-    $titlepage = "Data Mahasiswa";
-    $pg = "home.php";  
+    $titlepage = "Informasi Data Mahasiswa";
+    $pg = "pageutama.php";  
 }
 ?><!DOCTYPE html>
 <html lang="en">
@@ -39,7 +47,13 @@ if(isset($_GET['p'])){
           <a class="nav-link active" aria-current="page" href="index.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="index.php?p=baru">Baru</a>
+          <a class="nav-link" href="index.php?pg=mhs">DataMahasiswa</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="index.php?pg=mk">DataMatakuliah</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="index.php?pg=dsn">DataDosen</a>
         </li>
       </ul>
     </div>

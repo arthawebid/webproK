@@ -1,5 +1,13 @@
 <h3>Tambah data Mahasiswa</h3>
-<form>
+
+<div class="alert alert-primary" role="alert" id="sukses">
+  Data Telah ditambahkan
+</div>
+<div class="alert alert-danger" role="alert" id="gagal">
+  Data Gagal ditambahkan
+</div>
+
+<form id="mhsbaru">
   <div class="mb-3">
     <label for="nim" class="form-label">NIM</label>
     <input type="text" class="form-control" id="txnim">
@@ -39,5 +47,11 @@
     <div id="jkelHelp" class="form-text">Pilih Jurusan mahasiswa.</div>
   </div>
   
-  <button type="button" class="btn btn-primary">Simpan Data</button>
-</form>    
+  <button type="button" class="btn btn-primary" onclick="mhsupdate()">Simpan Data</button>
+</form>
+
+<script src="mhs-update.js"></script>
+<script>
+  document.getElementById("sukses").style.display="none";
+  document.getElementById("gagal").style.display="none";
+</script>
