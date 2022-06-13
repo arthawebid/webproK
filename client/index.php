@@ -6,15 +6,15 @@ if(isset($_GET['pg'])){
     if(isset($_GET['sp'])){
       if($_GET['sp']=="baru"){
           $titlepage = "Tambah Data Mahasiswa";
-          $pg = "addnew.php"; 
+          $pg = "mhs-addnew.php"; 
       }
       if($_GET["sp"]=="edit"){
           $titlepage = "Edit Data Mahasiswa";
-          $pg = "editdata.php"; 
+          $pg = "mhs-editdata.php"; 
       }
       if($_GET["sp"]=="dele"){
           $titlepage = "Hapus Data Mahasiswa";
-          $pg = "deledata.php"; 
+          $pg = "mhs-deledata.php"; 
       }
     }
   }

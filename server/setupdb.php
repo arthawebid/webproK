@@ -8,7 +8,12 @@
     $cnn = mysqli_connect(DBHOST,DBUSER,DBPASCODE) or 
         die("Koneksi ke DBMS Mysql gagal<br>");
     $sql = "CREATE DATABASE ".DBNAME.";";
-    mysqli_query($cnn,$sql);
+    if(mysqli_query($cnn,$sql)){
+        echo "Database ".DBNAME." berhasil dibuat";
+    }else{
+        echo "Database ".DBNAME." Gagal dibuat, check kondisi server database";
+        die();
+    }
     mysqli_select_db($cnn, DBNAME);
     $sql = "CREATE TABLE mhs(
         NIM VARCHAR(8) PRIMARY KEY,
@@ -17,4 +22,8 @@
         JK VARCHAR(1),
         TGLLAHIR date
     )";
-    mysqli_query($cnn,$sql);
+    if(mysqli_query($cnn,$sql)){
+        echo "Tabel mhs berhasil dibuat";
+    }else{
+        echo "Tabel mhs tidak berhasil dibuat";
+    }
